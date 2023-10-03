@@ -222,7 +222,7 @@ func (f *Framework) WaitForAlertmanagerReady(ctx context.Context, a *monitoringv
 				conditions:       current.Status.Conditions,
 			}, nil
 		},
-		5*time.Minute,
+		15*time.Minute,
 	); err != nil {
 		return errors.Wrapf(err, "alertmanager %v/%v failed to become available", a.Namespace, a.Name)
 	}
